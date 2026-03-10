@@ -97,18 +97,10 @@
       
 
       function display(rates){
-
         List="";
         for(let i=0; i<rates.length;i++){
           List += `<p>${rates[i].title} (${rates[i].year}) - ${rates[i].genre}, Rating: `
         }
-
-      document.querySelectorAll(".fa fa-star").forEach(star => {
-        star.classList.remove("selected");
-        if (star.getAttribute("data-value") <= rating) {
-          star.classList.add("selected");
-        }
-      });
     }
         window.onload = display;
     </script>
