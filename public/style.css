@@ -1,40 +1,37 @@
 body{
           padding: 25px;
           font-family: arial;
-          width: 80%;
-          margin-left: 10%;
+          width: 35%;
+          margin-left: 32.5%;
           background-color: #ADD8E6;
       }
       .title {
           color: rgb(8, 99, 173);
           text-align: center;
-      }
-
-      legend {
-          background: rgb(8, 99, 173);
-          color: rgb(186, 236, 252);
-          padding: 5px;
+          font-size:5vw;
+          font-family:cursive;
       }
       a {
-          background:rgb(8, 99, 173);
-          color:rgb(186, 236, 252);
+          background:#a88960;
+          color:white;
           padding: 5px;
+          height:2vw;
           text-decoration: none;
       }
       input:focus{
           color:rgb(0, 0, 0);
-          border-color: aqua;
-          background-color:rgb(143, 188, 224);
+          border-color: rgb(175, 124, 56);
+          background-color:#a88960;
       }
       textarea:focus{
           color:rgb(0, 0, 0);
-          border-color: aqua;
-          background-color:rgb(143, 188, 224);
+          border-color: rgb(175, 124, 56);
+          background-color:#a88960;
       }
       select:focus{
           color:rgb(0, 0, 0);
-          border-color: aqua;
-          background-color:rgb(143, 188, 224);
+          border-color: rgb(175, 124, 56);
+          background-color:#a88960;
       }
       section {
         background-color: aliceblue;
@@ -62,10 +59,10 @@ body{
         color:#838383;
       }
       button{
-        background-color: rgb(168, 137, 96);
+        background-color: #a88960;
         border:none;
         border-radius:5px;
         color:white;
-        height:30px;
         cursor:pointer;
+        font-size:1vw;
       }
