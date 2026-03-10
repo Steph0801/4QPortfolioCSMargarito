@@ -21,13 +21,13 @@
       <h1 class="title">Add a Movie</h1>
       <form id="dForm">
           <label> Title: 
-            <br><input type="text" name="title" id="title" onblur="noInput(this)" style="width:100%; height:20px" required />
+            <br><input type="text" name="title" id="title" onblur="noInput(this)" style="width:100%; height:1.5vw" required />
           </label><br/><br/>
           <label> Year:
-            <br><input type="text" name="year" id="year" onblur="noInput(this)" style="width:100%; height:20px" required />
+            <br><input type="text" name="year" id="year" onblur="noInput(this)" style="width:100%; height:1.5vw" required />
           </label><br/><br/>
               <label> Genre:
-                <br><select name="genre" id="genre" style="width:100%; height: 26px" required>
+                <br><select name="genre" id="genre" style="width:100%; height:2vw" required>
                     <option value="Action">Action</option>
                     <option value="Horror">Horror</option>
                     <option value="Comedy">Comedy</option>
@@ -42,27 +42,28 @@
       <div class="rating-css">
         <br><div>Rating:</div>
         <div class="star">
-            <input type="radio" name="rating1" id="rating1">
+            <input type="radio" name="rating1" id="rating1" value="1">
             <label for="rating1" class="fa fa-star"></label>
 
-            <input type="radio" name="rating1" id="rating2">
+            <input type="radio" name="rating1" id="rating2" value="2">
             <label for="rating2" class="fa fa-star"></label>
 
-            <input type="radio" name="rating1" id="rating3">
+            <input type="radio" name="rating1" id="rating3" value="3">
             <label for="rating3" class="fa fa-star"></label>
 
-            <input type="radio" name="rating1" id="rating4">
+            <input type="radio" name="rating1" id="rating4" value="4">
             <label for="rating4" class="fa fa-star"></label>
 
-            <input type="radio" name="rating1" id="rating5">
+            <input type="radio" name="rating1" id="rating5" value="5">
             <label for="rating5" class="fa fa-star"></label>
         </div>
       </div>
 
-      <br><button type="submit" style="width:100%">Add Movie</button>
+      <br><button type="submit" style="width:100%; height:2vw">Add Movie</button>
 
 
-      <h2 style="text-align:center">Movie List</h1>
+      <h2 style="text-align:center; font-size:2.5vw">Movie List</h2>
+      <div id="dispList"> </div>
     </section>
 
     <script>
@@ -79,26 +80,36 @@
 
         if(confirm("Are you sure you want to submit?")){
           let rates = JSON.parse(localStorage.getItem('movieRate')) || [];
-
+ 
           const entry = {
             title: document.getElementById('title').value,
             year: document.getElementById('year').value,
             genre: document.getElementById('genre').value,
-            rating: document.querySelector('input[name="rating1"]:checked').value,
+            rating: document.querySelector('.rating input').value,
           };
 
           rates.push(entry);
           localStorage.setItem('movieRate', JSON.stringify(rates));
+          display(rates);
           this.reset();
         }
       });
+      
 
-      function display(){
-        const data = JSON.parse(localStorage.getItem('movieRate')) || [];
+      function display(rates){
 
+        List="";
+        for(let i=0; i<rates.length;i++){
+          List += `<p>${rates[i].title} (${rates[i].year}) - ${rates[i].genre}, Rating: `
+        }
 
-      } 
-
+      document.querySelectorAll(".fa fa-star").forEach(star => {
+        star.classList.remove("selected");
+        if (star.getAttribute("data-value") <= rating) {
+          star.classList.add("selected");
+        }
+      });
+    }
         window.onload = display;
     </script>
   </body>
