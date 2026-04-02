@@ -146,6 +146,12 @@ Answer: The notice initially appears on top of the content but goes underneath i
 
     b. How does absolute positioning depend on its parent element?
 
+    An element with 'position:absolute' is positioned relative to its nearest ancestor with a position value other than static. The top, left, bottom, and right properties are defined as the distance between the edge of the element and its nearest positioned ancestor, otherwise it will use the viewport or the nearest block as its reference point.
+
     c. How do you differentiate sticky from fixed (you can research on sticky)?
 
+    Fixed is positioned relative to the viewport while sticky is a combination of relative and fixed. It first takes place in the normal document flow and when the scrolling/sticky threshold is met, it will then act as a fixed element.
+
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+    
+    If there were long blocks of texts where the registration is (or when there are buttons that need to be pressed in general), I would place the button fixed somewhere on the screen so that the students won't have to scroll up and down the page; for aesthetic purposes, I would specifically use 'sticky'.
